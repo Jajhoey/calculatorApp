@@ -37,7 +37,7 @@ function calculate() {
 
 	result.textContent = calculation;
 	calculationDone = true;
-	currentNumber = '';
+	currentNumber = calculation;
 	previousNumber = '';
 	currentOperator = null;
 }
@@ -53,14 +53,11 @@ function handleNumber(number) {
 }
 
 function handleOperator(operator) {
-	if (currentOperator) {
-		calculate();
-	}
-
+	calculationDone = false;
 	previousNumber = currentNumber;
 	currentNumber = '';
 	currentOperator = operator;
-  result.textContent = operator;
+  	result.textContent = operator;
 
 }
 
